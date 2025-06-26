@@ -132,7 +132,7 @@ export function SignInForm(): React.JSX.Element {
             )}
           />
           {errors.root ? <Alert color="error">{errors.root.message}</Alert> : null}
-          <Button disabled={isPending} type="submit" variant="contained">
+          <Button className='bg-[#19786f]' disabled={isPending} type="submit" variant="contained"  sx={{ backgroundColor: '#19786f', '&:hover': { backgroundColor: '#16645d' } }}>
             Sign in
           </Button>
           <div>

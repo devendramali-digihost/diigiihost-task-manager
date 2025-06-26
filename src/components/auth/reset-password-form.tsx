@@ -67,7 +67,7 @@ export function ResetPasswordForm(): React.JSX.Element {
             )}
           />
           {errors.root ? <Alert color="error">{errors.root.message}</Alert> : null}
-          <Button disabled={isPending} type="submit" variant="contained">
+          <Button disabled={isPending} type="submit" variant="contained" sx={{ backgroundColor: '#19786f', '&:hover': { backgroundColor: '#16645d' } }}>
             Send recovery link
           </Button>
         </Stack>
