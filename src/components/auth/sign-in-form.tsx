@@ -80,7 +80,7 @@ export function SignInForm(): React.JSX.Element {
           </Link>
         </Typography>
       </Stack>
-      <Link className='text-black border border-1 p-2 text-center rounded flex justify-center  gap-2  border-[#bfbfbf] shadow'>Continue with Google <img height={"20px"} width={"20px"} srcSet="https://material-kit-pro-react.devias.io/assets/logo-google.svg" alt="" srcset="" /></Link>
+      <Link className='text-black border border-1 p-2 text-center rounded flex justify-center  gap-2  border-[#bfbfbf] shadow'>Continue with Google <img height={"20px"} width={"20px"} srcSet="https://material-kit-pro-react.devias.io/assets/logo-google.svg" alt=""  /></Link>
 
       <span className="or">or</span>
 
