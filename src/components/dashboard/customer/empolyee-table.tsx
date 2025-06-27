@@ -1,80 +1,82 @@
 "use client";
 
 import * as React from "react";
-import Avatar from "@mui/material/Avatar";
+import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import Checkbox from "@mui/material/Checkbox";
 import Divider from "@mui/material/Divider";
-import Stack from "@mui/material/Stack";
+import Switch from "@mui/material/Switch";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
-import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-import Typography from "@mui/material/Typography";
-import dayjs from "dayjs";
+import { PencilSimpleIcon } from "@phosphor-icons/react/dist/ssr/PencilSimple";
+import { TrashSimpleIcon } from "@phosphor-icons/react/dist/ssr/TrashSimple";
 
 export interface IEmployee {
-  createdDate: string;            
-  name: string;
-  email: string;
-  role: string;
-  status: 'Active' | 'Deactivated'
+	createdDate: string;
+	name: string;
+	email: string;
+	role: string;
+	status: "Active" | "Deactivated";
 }
-
 
 interface IProps {
-  list :IEmployee[]
+	list: IEmployee[];
 }
 
-export function CustomersTable({list}:IProps): React.JSX.Element {
+export function CustomersTable({ list }: IProps): React.JSX.Element {
 	return (
 		<Card>
 			<Box sx={{ overflowX: "auto" }}>
 				<Table sx={{ minWidth: "800px" }}>
 					<TableHead>
 						<TableRow>
-							{/* <TableCell padding="checkbox">
-                <Checkbox
-                  checked={selectedAll}
-                  indeterminate={selectedSome}
-                  onChange={(event) => {
-                    if (event.target.checked) {
-                      selectAll();
-                    } else {
-                      deselectAll();
-                    }
-                  }}
-                />
-              </TableCell> */}
-							<TableCell sx={{ width: "10%"}}>Sr. No</TableCell>
-							<TableCell sx={{ width: "15%"}}>Created Date</TableCell>
-							<TableCell sx={{ width: "15%"}}>Role</TableCell>
-							<TableCell sx={{ width: "20%"}}>Privileges</TableCell>
-							<TableCell sx={{ width: "20%"}}>Status</TableCell>
-							<TableCell sx={{ width: "20%"}}>Action</TableCell>
+							<TableCell >Sr. No</TableCell>
+							<TableCell >Created Date</TableCell>
+							<TableCell >Name</TableCell>
+							<TableCell >Email</TableCell>
+							<TableCell >Role</TableCell>
+							<TableCell >Status</TableCell>
+							<TableCell >Action</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
-						{Array.isArray(list) &&  list.map((empolyee,index) => {
+						{Array.isArray(list) &&
+							list.map((empolyee, index) => {
+								const { createdDate, name, email, role, status } = empolyee;
 
-              const { createdDate , name ,email, role, status} = empolyee;
-						
-							return (
-								<TableRow hover>
-                  <TableCell>{index+1}</TableCell>
-                  <TableCell>{createdDate}</TableCell>
-                  <TableCell>{role}</TableCell>
-                  <TableCell>{role}</TableCell>
-                  <TableCell>Hold</TableCell>
-									<TableCell padding="checkbox">
+								return (
+									<TableRow hover>
+										<TableCell>{index + 1}</TableCell>
+										<TableCell>{createdDate}</TableCell>
+										<TableCell>{name}</TableCell>
+										<TableCell>{email}</TableCell>
+										<TableCell>{role}</TableCell>
+										<TableCell>
+											{" "}
+											<Switch
+												checked={ status === 'Active'  ? true : false}
+												
+												inputProps={{ "aria-label": "controlled" }}
+												color="primary"
+											/>
+										</TableCell>
+										<TableCell>
+											<Button color="inherit">
+												<PencilSimpleIcon fontSize="var(--icon-fontSize-md)" />
+											</Button>
+											<Button color="inherit">
+												<TrashSimpleIcon fontSize="var(--icon-fontSize-md)" />
+											</Button>
+										</TableCell>
+										{/* <TableCell padding="checkbox">
 										<Checkbox
 											
 										/>
-									</TableCell>
-									{/* <TableCell>
+									</TableCell> */}
+										{/* <TableCell>
 										<Stack sx={{ alignItems: "center" }} direction="row" spacing={2}>
 											
 											<Typography variant="subtitle2">{row.name}</Typography>
@@ -86,9 +88,9 @@ export function CustomersTable({list}:IProps): React.JSX.Element {
 									</TableCell>
 									<TableCell>{row.phone}</TableCell>
 									<TableCell>{dayjs(row.createdAt).format("MMM D, YYYY")}</TableCell> */}
-								</TableRow>
-							);
-						})}
+									</TableRow>
+								);
+							})}
 					</TableBody>
 				</Table>
 			</Box>

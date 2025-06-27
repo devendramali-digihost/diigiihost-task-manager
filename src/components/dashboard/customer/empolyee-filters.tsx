@@ -5,6 +5,7 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import { MagnifyingGlassIcon } from '@phosphor-icons/react/dist/ssr/MagnifyingGlass';
 
 export function CustomersFilters(): React.JSX.Element {
+  
   return (
     <Card sx={{ p: 2 }}>
       <OutlinedInput
