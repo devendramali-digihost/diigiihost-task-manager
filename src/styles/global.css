@@ -22,7 +22,7 @@
 }
 
 *:focus-visible {
-  outline: 2px solid var(--mui-palette-primary-main);
+  outline: 2px solid #19786f;
 }
 
 html {
@@ -35,6 +35,10 @@ body {
 a{
   text-decoration: none;
   color: #000 !important;
+}
+.MuiBox-root a{
+  text-decoration: none;
+  color: #ffffff !important;
 }
 a:hover{
   text-decoration: none !important;
@@ -60,4 +64,12 @@ a:hover{
   background-color: #bfbfbf;
   top: 50%;
   right: 0;
+}
+.Mui-focused .mui-1v24f9t-MuiOutlinedInput-notchedOutline{
+  border-color: #19786f !important;
+   /* outline: 2px solid #19786f !important; */
+   color: #19786f !important;;
+}
+.Mui-focused{
+  color: #19786f !important;
 }
