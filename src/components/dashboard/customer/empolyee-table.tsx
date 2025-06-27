@@ -74,7 +74,7 @@ export function CustomersTable({list}:IProps): React.JSX.Element {
 											
 										/>
 									</TableCell>
-									<TableCell>
+									{/* <TableCell>
 										<Stack sx={{ alignItems: "center" }} direction="row" spacing={2}>
 											
 											<Typography variant="subtitle2">{row.name}</Typography>
@@ -85,7 +85,7 @@ export function CustomersTable({list}:IProps): React.JSX.Element {
 										{row.address.city}, {row.address.state}, {row.address.country}
 									</TableCell>
 									<TableCell>{row.phone}</TableCell>
-									<TableCell>{dayjs(row.createdAt).format("MMM D, YYYY")}</TableCell>
+									<TableCell>{dayjs(row.createdAt).format("MMM D, YYYY")}</TableCell> */}
 								</TableRow>
 							);
 						})}
@@ -93,7 +93,7 @@ export function CustomersTable({list}:IProps): React.JSX.Element {
 				</Table>
 			</Box>
 			<Divider />
-			<TablePagination
+			{/* <TablePagination
 				component="div"
 				count={count}
 				onPageChange={noop}
@@ -101,7 +101,7 @@ export function CustomersTable({list}:IProps): React.JSX.Element {
 				page={page}
 				rowsPerPage={rowsPerPage}
 				rowsPerPageOptions={[5, 10, 25]}
-			/>
+			/> */}
 		</Card>
 	);
 }
