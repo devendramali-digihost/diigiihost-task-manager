@@ -259,3 +259,28 @@ input[type="range"] {
 .chartjs-chart {
   max-height: 300px;
 }  
+.form-control__control--is-focused,
+.css-t3ipsp-control:hover  ,
+.css-t3ipsp-control:focus   {
+  border-color: #19786f !important;
+  box-shadow: none;
+  outline: none;
+}
+.form-control__control.form-control__control--is-focused.css-t3ipsp-control{
+  border-color: #19786f !important;
+  box-shadow: none;
+  outline: none;
+}
+.form-control__menu {
+  background-color: #f9f9f9;
+  border: 1px solid #19786f;
+  z-index: 10; /* Ensure it's above other elements */
+}
+// select.form-control option:hover,
+// select.form-control option{
+//     background-color: #19786f !important;
+//   border: 1px solid #19786f;
+// }
+.select__multi-value__label{
+  color: #f9f9f9 !important;
+}

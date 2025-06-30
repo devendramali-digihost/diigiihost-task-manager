@@ -4,7 +4,7 @@ import { useForm, Controller } from "react-hook-form";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { forgetUser } from '../../store/actions';
-import logodark from "../../assets/images/logo-dark.png";
+import logodark from "../../assets/images/diigii.webp";
 
 const ForgetPasswordPage = ({ forgetUser, forgetError, message, loading }) => {
     const { handleSubmit, control, formState: { errors } } = useForm();
@@ -35,10 +35,10 @@ const ForgetPasswordPage = ({ forgetUser, forgetError, message, loading }) => {
                                             <div>
                                                 <div className="text-center">
                                                     <div>
-                                                        <Link to="/" className="logo"><img src={logodark} height="20" alt="logo" /></Link>
+                                                        <Link to="/" className="logo"><img src={logodark} height="35" alt="logo" /></Link>
                                                     </div>
                                                     <h4 className="font-size-18 mt-4">Reset Password</h4>
-                                                    <p className="text-muted">Reset your password to Nazox.</p>
+                                                    <p className="text-muted">Reset your password to Diigiihost.</p>
                                                 </div>
 
                                                 <div className="p-2 mt-5">
@@ -98,7 +98,7 @@ const ForgetPasswordPage = ({ forgetUser, forgetError, message, loading }) => {
 
                                                 <div className="mt-5 text-center">
                                                     <p>Don't have an account? <Link to="/login" className="fw-medium text-primary">Log in</Link></p>
-                                                    <p>© 2021 Nazox. Crafted with <i className="mdi mdi-heart text-danger"></i> by Themesdesign</p>
+                                                   <p>© 2025 <a href='https://www.digihost.in/' target='_blank'>Diigiihost</a>.</p>
                                                 </div>
                                             </div>
                                         </Col>

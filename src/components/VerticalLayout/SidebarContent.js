@@ -102,21 +102,51 @@ class SidebarContent extends Component {
           <ul className="metismenu list-unstyled" id="side-menu">
             <li className="menu-title">{this.props.t('Menu')}</li>
 
-            <li>
+            {/* <li>
               <Link to="/dashboard" className="waves-effect">
                 <i className="ri-dashboard-line"></i><span className="badge rounded-pill bg-success float-end">3</span>
                 <span className="ms-1">{this.props.t('Dashboard')}</span>
               </Link>
+            </li> */}
+            <li>
+              <Link to="/role-master" className="waves-effect">
+                <i className="ri-dashboard-line"></i> 
+                <span className="ms-1">{this.props.t('Role Master')}</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/employee-list" className="waves-effect">
+                <i className="ri-dashboard-line"></i> 
+                <span className="ms-1">{this.props.t('Employee list')}</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/client-list" className="waves-effect">
+                <i className="ri-dashboard-line"></i> 
+                <span className="ms-1">{this.props.t('Client list')}</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/project-list" className="waves-effect">
+                <i className="ri-dashboard-line"></i> 
+                <span className="ms-1">{this.props.t('Project list')}</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/task-list" className="waves-effect">
+                <i className="ri-dashboard-line"></i> 
+                <span className="ms-1">{this.props.t('Task list')}</span>
+              </Link>
             </li>
 
-            <li>
+            {/* <li>
               <Link to="/calendar" className=" waves-effect">
                 <i className="ri-calendar-2-line"></i>
                 <span className="ms-1">{this.props.t('Calendar')}</span>
               </Link>
-            </li>
+            </li> */}
 
-            <li>
+            {/* <li>
               <Link to="/chat" className=" waves-effect">
                 <i className="ri-chat-1-line"></i>
                 <span className="ms-1">{this.props.t('Chat')}</span>
@@ -149,11 +179,11 @@ class SidebarContent extends Component {
                 <li><Link to="/email-inbox">{this.props.t('Inbox')}</Link></li>
                 <li><Link to="/email-read">{this.props.t('Read Email')}</Link></li>
               </ul>
-            </li>
+            </li> */}
 
-            <li className="menu-title">{this.props.t('Pages')}</li>
+            {/* <li className="menu-title">{this.props.t('Pages')}</li> */}
 
-            <li>
+            {/* <li>
               <Link to="/#" className="has-arrow waves-effect">
                 <i className="ri-account-circle-line"></i>
                 <span className="ms-1">{this.props.t('Authentication')}</span>
@@ -200,7 +230,7 @@ class SidebarContent extends Component {
                 <li><Link to="/ui-images">{this.props.t('Images')}</Link></li>
                 <li><Link to="/ui-lightbox">{this.props.t('Lightbox')}</Link></li>
                 <li><Link to="/ui-modals">{this.props.t('Modals')}</Link></li>
-                {/* <li><Link to="/ui-offcanvas">{this.props.t("Offcanvas")}</Link></li> */}
+               
                 <li><Link to="/ui-rangeslider">{this.props.t('Range Slider')}</Link></li>
                 <li><Link to="/ui-roundslider">{this.props.t('Round Slider')}</Link></li>
                 <li><Link to="/ui-session-timeout">{this.props.t('Session Timeout')}</Link></li>
@@ -294,7 +324,7 @@ class SidebarContent extends Component {
                   </ul>
                 </li>
               </ul>
-            </li>
+            </li> */}
 
           </ul>
         </div>

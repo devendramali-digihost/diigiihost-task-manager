@@ -31,10 +31,10 @@ import MegaMenu from "./MegaMenu";
 import { toggleRightSidebar } from "../../store/actions";
 
 //Import logo Images
-import logosmdark from "../../assets/images/logo-sm-dark.png";
-import logodark from "../../assets/images/logo-dark.png";
-import logosmlight from "../../assets/images/logo-sm-light.png";
-import logolight from "../../assets/images/logo-light.png";
+import logosmdark from "../../assets/images/fevicon.webp";
+import logodark from "../../assets/images/logo-white.png";
+import logosmlight from "../../assets/images/fevicon.webp";
+import logolight from "../../assets/images/logo-white.png";
 
 //Import Social Profile Images
 import github from "../../assets/images/brands/github.png";
@@ -110,7 +110,7 @@ class Header extends Component {
                                         <img src={logosmdark} alt="" height="22" />
                                     </span>
                                     <span className="logo-lg">
-                                        <img src={logodark} alt="" height="20" />
+                                        <img src={logodark} alt="" height="35" />
                                     </span>
                                 </Link>
 
@@ -119,7 +119,7 @@ class Header extends Component {
                                         <img src={logosmlight} alt="" height="22" />
                                     </span>
                                     <span className="logo-lg">
-                                        <img src={logolight} alt="" height="20" />
+                                        <img src={logolight} alt="" height="38" />
                                     </span>
                                 </Link>
                             </div>

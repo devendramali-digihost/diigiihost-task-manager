@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 // import images
-import logodark from "../../assets/images/logo-dark.png";
+import logodark from "../../assets/images/diigii.webp";
 
 // Actions
 import { registerUser, registerUserFailed, apiError } from '../../store/actions';
@@ -62,11 +62,11 @@ function RegisterForm({ user, registrationError, loading, onRegisterUser }) {
                                             <div className="text-center">
                                                 <div>
                                                     <Link to="#" className="logo">
-                                                        <img src={logodark} height="20" alt="logo" />
+                                                        <img src={logodark} height="35" alt="logo" />
                                                     </Link>
                                                 </div>
                                                 <h4 className="font-size-18 mt-4">Register account</h4>
-                                                <p className="text-muted">Get your free Nazox account now.</p>
+                                                {/* <p className="text-muted">Get your free Nazox account now.</p> */}
                                             </div>
 
                                             {user && <Alert color="success">Registration Done Successfully.</Alert>}
@@ -117,14 +117,14 @@ function RegisterForm({ user, registrationError, loading, onRegisterUser }) {
                                                     </div>
 
                                                     <div className="mt-4 text-center">
-                                                        <p className="mb-0">By registering you agree to the Nazox <Link to="#" className="text-primary">Terms of Use</Link></p>
+                                                        <p className="mb-0">By registering you agree to the Diigiihost <Link to="#" className="text-primary">Terms of Use</Link></p>
                                                     </div>
                                                 </form>
                                             </div>
 
                                             <div className="mt-5 text-center">
                                                 <p>Already have an account ? <Link to="/login" className="fw-medium text-primary"> Login</Link> </p>
-                                                <p>© 2021 Nazox. Crafted with <i className="mdi mdi-heart text-danger"></i> by Themesdesign</p>
+                                               <p>© 2025 <a href='https://www.digihost.in/' target='_blank'>Diigiihost</a> .</p>
                                             </div>
                                         </div>
                                     </Col>

@@ -17,10 +17,10 @@ import ProfileMenu from "../CommonForBoth/TopbarDropdown/ProfileMenu";
 
 
 //Import Logos 
-import logoSmLight from "../../assets/images/logo-sm-light.png";
-import logoLight from "../../assets/images/logo-light.png";
-import logoDark from "../../assets/images/logo-dark.png";
-import logoSmDark from "../../assets/images/logo-sm-dark.png";
+import logoSmLight from "../../assets/images/logo-white.png";
+import logoLight from "../../assets/images/logo-white.png";
+import logoDark from "../../assets/images/logo-white.png";
+import logoSmDark from "../../assets/images/logo-white.png";
 
 // profile images
 import github from "../../assets/images/brands/github.png";

@@ -96,6 +96,19 @@ import ResponsiveTables from "../pages/Tables/ResponsiveTables";
 import Login1 from "../pages/AuthenticationInner/Login";
 import Register1 from "../pages/AuthenticationInner/Register";
 import ForgetPwd1 from "../pages/AuthenticationInner/ForgetPassword";
+import RoleMasterList from "../pages/RoleMaster/RoleMasterList";
+import EmployeeList from "../pages/Employee/EmployeeList";
+import CreateEmploye from "../pages/Employee/CreateEmploye";
+import UpdateEmploye from "../pages/Employee/UpdateEmploye";
+import Clientlist from "../pages/Clients/Clientlist";
+import AddClient from "../pages/Clients/AddClient";
+import UpdateClient from "../pages/Clients/UpdateClient";
+import Projectlist from "../pages/Project/Projectlist";
+import AddProject from "../pages/Project/AddProject";
+import UpdateProject from "../pages/Project/UpdateProject";
+import TaskList from "../pages/Task/TaskList";
+import AddTask from "../pages/Task/AddTask";
+import UpdateTask from "../pages/Task/UpdateTask";
 
 const authProtectedRoutes = [
 
@@ -182,6 +195,33 @@ const authProtectedRoutes = [
 
 	// this route should be at the end of all other routes
 	{ path: "/", exact: true, component: <Navigate to="/dashboard" /> },
+
+	//Role Master
+	{ path: "/role-master", component: <RoleMasterList />},
+
+	//employee-list
+	{ path: "/employee-list", component: <EmployeeList />},
+	{path: "/create-employee", component: <CreateEmploye />},
+	{path: "/update-employee", component: <UpdateEmploye />},
+
+
+	//Client list
+
+	{path: "/client-list", component: <Clientlist />},
+	{path: "/add-client", component: <AddClient />},
+	{path: "/update-client", component: <UpdateClient />},
+
+	// Project
+	{path: "/project-list", component:<Projectlist/>},
+	{path: "/add-project", component:<AddProject/>},
+	{path: "/update-project", component:<UpdateProject/>},
+
+	//Task
+	{path: "/task-list", component:<TaskList/>},
+	{path: "/add-task", component:<AddTask/>},
+	{path: "/update-task", component:<UpdateTask/>},
+
+
 ];
 
 const publicRoutes = [
