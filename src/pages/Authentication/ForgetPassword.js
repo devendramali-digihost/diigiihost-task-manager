@@ -38,7 +38,7 @@ const ForgetPasswordPage = ({ forgetUser, forgetError, message, loading }) => {
                                                         <Link to="/" className="logo"><img src={logodark} height="35" alt="logo" /></Link>
                                                     </div>
                                                     <h4 className="font-size-18 mt-4">Reset Password</h4>
-                                                    <p className="text-muted">Reset your password to Diigiihost.</p>
+                                                    <p className="text-muted">Reset your password to DiigiiHost.</p>
                                                 </div>
 
                                                 <div className="p-2 mt-5">
@@ -98,7 +98,7 @@ const ForgetPasswordPage = ({ forgetUser, forgetError, message, loading }) => {
 
                                                 <div className="mt-5 text-center">
                                                     <p>Don't have an account? <Link to="/login" className="fw-medium text-primary">Log in</Link></p>
-                                                   <p>© 2025 <a href='https://www.digihost.in/' target='_blank'>Diigiihost</a>.</p>
+                                                   <p>© 2025 <a href='https://www.digihost.in/' target='_blank'>DiigiiHost</a>.</p>
                                                 </div>
                                             </div>
                                         </Col>

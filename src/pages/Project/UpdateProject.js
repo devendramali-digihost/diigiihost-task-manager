@@ -178,7 +178,7 @@ class UpdateProject extends Component {
                         </Row>
                        
                        
-                        <Button color="primary" type="submit">Submit</Button>
+                        <Button color="primary" type="submit">Update</Button>
                     </form>
                     </CardBody>
                 </Card>

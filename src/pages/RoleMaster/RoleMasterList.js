@@ -24,6 +24,7 @@ import {
 } from "react-table";
 import PropTypes from "prop-types";
 import Breadcrumbs from "../../components/Common/Breadcrumb";
+import prvi from "../../assets/images/privileges.png"; 
 
 function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) {
   const count = preGlobalFilteredRows.length;
@@ -123,7 +124,7 @@ const TableContainer = ({
         <Col md={6}>
           <div className="d-flex justify-content-end">
             <Button color="primary" onClick={() => setModalOpen(true)}>
-              Add Role
+              Add
             </Button>
           </div>
         </Col>
@@ -237,7 +238,23 @@ const RoleMasterList = () => {
     },
     { Header: "Created Date", accessor: "createddate" },
     { Header: "Role", accessor: "position" },
-    { Header: "Privileges", accessor: "privileges" },
+      {
+        Header: "Privileges",
+        accessor: "privileges", // optional if you have data
+        Cell: ({ row }) => {
+          return (
+            <div className="">
+            
+              <img
+                src={prvi}
+                alt="Privilege Icon"
+                height="30"
+                className=""
+              />
+            </div>
+          );
+        }
+      },  
     {
       Header: "Status",
       accessor: "status",

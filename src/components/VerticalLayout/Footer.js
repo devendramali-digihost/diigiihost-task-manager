@@ -7,12 +7,12 @@ const Footer = () => {
             <footer className="footer">
                 <Container fluid>
                     <Row>
-                        <Col sm={6}>
-                             © Diigiihost.
-                            </Col>
-                        <Col sm={6}>
+                        {/* <Col sm={6}>
+                             © DiigiiHost.
+                            </Col> */}
+                        <Col sm={12}>
                             <div className="text-sm-end d-none d-sm-block">
-                               © {new Date().getFullYear()} All Rights Reserved. <a href="https://diigiihost.com" target="_blank" rel="noopener noreferrer">Diigiihost</a>
+                               © {new Date().getFullYear()} All Rights Reserved. <a href="https://DiigiiHost.com" target="_blank" rel="noopener noreferrer">DiigiiHost</a>
                                 </div>
                         </Col>
                     </Row>

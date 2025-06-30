@@ -124,7 +124,7 @@ const TableContainer = ({
         <Col md={6}>
           <div className="d-flex justify-content-end">
             <Link to="/add-client"  className="btn btn-primary">
-              Add Client
+              Add
             </Link>
           </div>
         </Col>
@@ -301,14 +301,14 @@ const Clientlist = () => {
  
    const breadcrumbItems = [
      { title: "Dashboard", link: "/" },
-     { title: "Client list", link: "#" },
+     { title: "Client", link: "#" },
    ];
  
    return (
      <Fragment>
        <div className="page-content">
          <Container fluid>
-           <Breadcrumbs title="CLIENT LIST" breadcrumbItems={breadcrumbItems} />
+           <Breadcrumbs title="CLIENT" breadcrumbItems={breadcrumbItems} />
            <Card>
              <CardBody>
                <TableContainer

@@ -124,7 +124,7 @@ const TableContainer = ({
         <Col md={6}>
           <div className="d-flex justify-content-end">
             <Link color="primary" to="/create-employee" className="btn btn-primary">
-              Add Employee
+              Add
             </Link>
           </div>
         </Col>
@@ -296,14 +296,14 @@ const [rolelist, setRolelist] = useState([
 
   const breadcrumbItems = [
     { title: "Dashboard", link: "/" },
-    { title: "Employee List", link: "#" },
+    { title: "Employee", link: "#" },
   ];
 
   return (
     <Fragment>
       <div className="page-content">
         <Container fluid>
-          <Breadcrumbs title="EMPLOYEE LIST" breadcrumbItems={breadcrumbItems} />
+          <Breadcrumbs title="EMPLOYEE" breadcrumbItems={breadcrumbItems} />
           <Card>
             <CardBody>
               <TableContainer

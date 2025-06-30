@@ -58,7 +58,7 @@ function LoginForm(props) {
                                                         <img src={logolight} alt="" height="35" className="auth-logo logo-light mx-auto" />
                                                     </Link>
                                                     <h4 className="font-size-18 mt-4">Welcome Back!</h4>
-                                                    <p className="text-muted">Sign in to continue to Diigiihost.</p>
+                                                    <p className="text-muted">Sign in to continue to DiigiiHost.</p>
                                                 </div>
                                                 {props.loginError && <Alert color="danger">{props.loginError}</Alert>}
                                                 <div className="p-2 mt-5">
@@ -106,7 +106,7 @@ function LoginForm(props) {
 
                                                 <div className="mt-5 text-center">
                                                     <p>Don't have an account? <Link to="/register" className="fw-medium text-primary"> Register </Link></p>
-                                                    <p>© {new Date().getFullYear()} <a href='https://www.digihost.in/' target='_blank'>Diigiihost</a>.</p>
+                                                    <p>© {new Date().getFullYear()} <a href='https://www.digihost.in/' target='_blank'>DiigiiHost</a>.</p>
                                                 </div>
                                             </div>
                                         </Col>

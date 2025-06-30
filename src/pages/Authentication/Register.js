@@ -117,14 +117,14 @@ function RegisterForm({ user, registrationError, loading, onRegisterUser }) {
                                                     </div>
 
                                                     <div className="mt-4 text-center">
-                                                        <p className="mb-0">By registering you agree to the Diigiihost <Link to="#" className="text-primary">Terms of Use</Link></p>
+                                                        <p className="mb-0">By registering you agree to the DiigiiHost <Link to="#" className="text-primary">Terms of Use</Link></p>
                                                     </div>
                                                 </form>
                                             </div>
 
                                             <div className="mt-5 text-center">
                                                 <p>Already have an account ? <Link to="/login" className="fw-medium text-primary"> Login</Link> </p>
-                                               <p>© {new Date().getFullYear()} <a href='https://www.digihost.in/' target='_blank'>Diigiihost</a> .</p>
+                                               <p>© {new Date().getFullYear()} <a href='https://www.digihost.in/' target='_blank'>DiigiiHost</a> .</p>
                                             </div>
                                         </div>
                                     </Col>

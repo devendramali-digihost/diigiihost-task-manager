@@ -265,7 +265,7 @@ class AddTask extends Component {
                         </Row>
                        
                        
-                        <Button color="primary" type="submit">Submit</Button>
+                        <Button color="primary" type="submit">Add</Button>
                     </form>
                     </CardBody>
                 </Card>
