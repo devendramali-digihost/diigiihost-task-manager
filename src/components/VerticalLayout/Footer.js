@@ -8,11 +8,11 @@ const Footer = () => {
                 <Container fluid>
                     <Row>
                         <Col sm={6}>
-                            {new Date().getFullYear()} © Nazox.
+                             © Diigiihost.
                             </Col>
                         <Col sm={6}>
                             <div className="text-sm-end d-none d-sm-block">
-                                Crafted with <i className="mdi mdi-heart text-danger"></i> by Themesdesign
+                               © {new Date().getFullYear()} All Rights Reserved. <a href="https://diigiihost.com" target="_blank" rel="noopener noreferrer">Diigiihost</a>
                                 </div>
                         </Col>
                     </Row>

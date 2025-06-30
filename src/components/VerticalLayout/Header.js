@@ -107,7 +107,7 @@ class Header extends Component {
                             <div className="navbar-brand-box">
                                 <Link to="#" className="logo logo-dark">
                                     <span className="logo-sm">
-                                        <img src={logosmdark} alt="" height="22" />
+                                        <img src={logosmdark} alt="" height="55" />
                                     </span>
                                     <span className="logo-lg">
                                         <img src={logodark} alt="" height="35" />
@@ -116,7 +116,7 @@ class Header extends Component {
 
                                 <Link to="#" className="logo logo-light">
                                     <span className="logo-sm">
-                                        <img src={logosmlight} alt="" height="22" />
+                                        <img src={logosmlight} alt="" height="55" />
                                     </span>
                                     <span className="logo-lg">
                                         <img src={logolight} alt="" height="38" />

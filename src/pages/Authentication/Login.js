@@ -106,7 +106,7 @@ function LoginForm(props) {
 
                                                 <div className="mt-5 text-center">
                                                     <p>Don't have an account? <Link to="/register" className="fw-medium text-primary"> Register </Link></p>
-                                                    <p>© 2025 <a href='https://www.digihost.in/' target='_blank'>Diigiihost</a>.</p>
+                                                    <p>© {new Date().getFullYear()} <a href='https://www.digihost.in/' target='_blank'>Diigiihost</a>.</p>
                                                 </div>
                                             </div>
                                         </Col>

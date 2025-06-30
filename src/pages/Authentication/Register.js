@@ -124,7 +124,7 @@ function RegisterForm({ user, registrationError, loading, onRegisterUser }) {
 
                                             <div className="mt-5 text-center">
                                                 <p>Already have an account ? <Link to="/login" className="fw-medium text-primary"> Login</Link> </p>
-                                               <p>© 2025 <a href='https://www.digihost.in/' target='_blank'>Diigiihost</a> .</p>
+                                               <p>© {new Date().getFullYear()} <a href='https://www.digihost.in/' target='_blank'>Diigiihost</a> .</p>
                                             </div>
                                         </div>
                                     </Col>
