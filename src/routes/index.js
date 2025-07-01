@@ -109,6 +109,7 @@ import UpdateProject from "../pages/Project/UpdateProject";
 import TaskList from "../pages/Task/TaskList";
 import AddTask from "../pages/Task/AddTask";
 import UpdateTask from "../pages/Task/UpdateTask";
+import TaskView from "../pages/Task/TaskView";
 
 const authProtectedRoutes = [
 
@@ -220,6 +221,7 @@ const authProtectedRoutes = [
 	{path: "/task-list", component:<TaskList/>},
 	{path: "/add-task", component:<AddTask/>},
 	{path: "/update-task", component:<UpdateTask/>},
+	{path: "/task-view", component:<TaskView/>},
 
 
 ];

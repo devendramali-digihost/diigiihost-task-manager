@@ -167,16 +167,16 @@ class Chat extends Component {
 
     return (
       <React.Fragment>
-        <div className="page-content">
-          <Container fluid>
+        <div className="page-content p-0 h-100">
+          <Container fluid className="h-100">
             {/* Render Breadcrumb */}
-            <Breadcrumbs
+            {/* <Breadcrumbs
               title="Chat"
               breadcrumbItems={this.state.breadcrumbItems}
-            />
+            /> */}
 
-            <div className="d-lg-flex mb-4">
-              <div className="chat-leftsidebar">
+            <div className="d-lg-flex mb-4 h-100">
+              {/* <div className="chat-leftsidebar">
                 <div className="p-3 border-bottom">
                   <div className="d-flex">
                     <div className="align-self-center me-3">
@@ -400,9 +400,9 @@ class Chat extends Component {
                     </div>
                   </TabPane>
                 </TabContent>
-              </div>
+              </div> */}
               <div className="w-100 user-chat mt-4 mt-sm-0">
-                <div className="p-3 px-lg-4 user-chat-border">
+                {/* <div className="p-3 px-lg-4 user-chat-border">
                   <Row>
                     <Col md={4} xs={6}>
                       <h5 className="font-size-15 mb-1 text-truncate">
@@ -506,12 +506,12 @@ class Chat extends Component {
                       </ul>
                     </Col>
                   </Row>
-                </div>
+                </div> */}
 
                 <div className="px-lg-2">
                   <div className="chat-conversation p-3 chat-conversation-height">
-                    <ul className="list-unstyled mb-0 pe-3">
-                      <PerfectScrollbar style={{ maxHeight: "450px" }}>
+                    <ul className="list-unstyled mb-0 pe-3 h-100">
+                      <PerfectScrollbar style={{ maxHeight: "550px" }}>
                         {messages.map((message, key) => (
                           <li
                             key={key}

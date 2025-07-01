@@ -25,6 +25,7 @@ import {
 import PropTypes from "prop-types";
 import Breadcrumbs from "../../components/Common/Breadcrumb";
 import { Link } from "react-router-dom";
+import deleteimg from "../../assets/images/delete.png"; 
 
 function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) {
   const count = preGlobalFilteredRows.length;
@@ -291,7 +292,7 @@ const Clientlist = () => {
            <Link to="/update-client" color="primary" size="sm" className="btn btn-primary">
              Edit
            </Link>
-           <Button color="danger" size="sm" onClick={() => alert(`Delete ${row.original.name}`)}>
+           <Button color="danger" size="sm"  onClick={() => setModalOpen2(true)}>
              Delete
            </Button>
          </div>
@@ -303,6 +304,7 @@ const Clientlist = () => {
      { title: "Dashboard", link: "/" },
      { title: "Client", link: "#" },
    ];
+   const [modalOpen2, setModalOpen2] = useState(false);
  
    return (
      <Fragment>
@@ -321,6 +323,24 @@ const Clientlist = () => {
              </CardBody>
            </Card>
          </Container>
+              {/*  Modal for Delete Confirmation */}
+                 <Modal  isOpen={modalOpen2} toggle={() => setModalOpen2(!modalOpen2)}>
+                   {/* <ModalHeader className="position-absolute right-0 top-0 w-100 z-1" toggle={() => setModalOpen2(!modalOpen2)}></ModalHeader> */}
+                   <ModalBody className="mt-3">
+                    <h4 className="p-3 text-center">Do you really want to <br/> delete the file?</h4>
+                    <div className="d-flex justify-content-center">
+                     <img src={deleteimg} alt="Privilege Icon" width={"70%"} className="mb-3 m-auto" />
+                    </div>
+                   </ModalBody>
+                   <ModalFooter>
+                     <Button color="danger" onClick={() => setModalOpen2(false)}>
+                       Delete
+                     </Button>
+                     <Button color="secondary" onClick={() => setModalOpen2(false)}>
+                       Cancel
+                     </Button>
+                   </ModalFooter>
+                 </Modal>
  
       
        </div>

@@ -11,6 +11,9 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
+    Offcanvas,
+  OffcanvasHeader,
+  OffcanvasBody,
   ModalFooter,
 } from "reactstrap";
 import {
@@ -26,6 +29,7 @@ import PropTypes from "prop-types";
 import Breadcrumbs from "../../components/Common/Breadcrumb";
 import { Link } from "react-router-dom";
 import deleteimg from "../../assets/images/delete.png"; 
+import Chat from "../Chat/Chat";
 
 function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) {
   const count = preGlobalFilteredRows.length;
@@ -99,9 +103,10 @@ const TableContainer = ({
 
   const { pageIndex, pageSize } = state;
 
+
   return (
     <Fragment>
-      <Row className="mb-2">
+      {/* <Row className="mb-2">
         <Col md={2}>
           <select
             className="form-select"
@@ -124,12 +129,12 @@ const TableContainer = ({
         )}
         <Col md={6}>
           <div className="d-flex justify-content-end">
-            <Link to="/add-project"  className="btn btn-primary">
+            <Link to="/add-task"  className="btn btn-primary">
               Add
             </Link>
           </div>
         </Col>
-      </Row>
+      </Row> */}
 
       <div className="table-responsive react-table">
         <Table bordered hover {...getTableProps()} className={className}>
@@ -208,97 +213,47 @@ TableContainer.propTypes = {
   isGlobalFilter: PropTypes.bool,
   setModalOpen: PropTypes.func.isRequired,
 };
-const Projectlist = () => {
-  const [projectData, setprojectData] = useState([
+
+const TaskView = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+  const toggleOffcanvas = () => setIsOpen(!isOpen);
+  const [tasks, settasks] = useState([
   {
       id: 1,
       createdDate: "2024-06-01",
-      projectName: "Website Redesign",
-      client: "Acme Corp",
-      startDate: "2024-06-05",
-      endDate: "2024-07-15",
-      status: "Active"
+      taskTitle: "Design Homepage",
+      startDate: "2024-06-02",
+      endDate: "2024-06-05",
+      prostatus: "In Progress",
+      priority: "High",
+      assignedBy: "Manager A",
+      assignedTo: "Designer X",
+      status:"Active"
     },
     {
       id: 2,
-      createdDate: "2024-06-10",
-      projectName: "Mobile App Development",
-      client: "Globex Ltd",
-      startDate: "2024-06-12",
-      endDate: "2024-08-30",
-      status: "Inactive"
+      createdDate: "2024-06-03",
+      taskTitle: "Fix Login Bug",
+      startDate: "2024-06-04",
+      endDate: "2024-06-07",
+      prostatus: "Completed",
+      priority: "Medium",
+      assignedBy: "Manager B",
+      assignedTo: "Developer Y",
+      status:"Inactive"
     },
     {
       id: 3,
-      createdDate: "2024-05-20",
-      projectName: "CRM Integration",
-      client: "Initech",
-      startDate: "2024-05-25",
-      endDate: "2024-07-05",
-      status: "Active"
-    },
-    {
-      id: 4,
-      createdDate: "2024-06-03",
-      projectName: "E-Commerce Backend",
-      client: "Soylent Corp",
+      createdDate: "2024-06-05",
+      taskTitle: "API Integration",
       startDate: "2024-06-06",
-      endDate: "2024-07-30",
-      status: "Inactive"
-    },
-    {
-      id: 5,
-      createdDate: "2024-06-08",
-      projectName: "SEO Optimization",
-      client: "Hooli",
-      startDate: "2024-06-10",
-      endDate: "2024-07-20",
-      status: "Active"
-    },
-    {
-      id: 6,
-      createdDate: "2024-06-15",
-      projectName: "API Gateway Setup",
-      client: "Umbrella Corp",
-      startDate: "2024-06-17",
-      endDate: "2024-07-25",
-      status: "Active"
-    },
-    {
-      id: 7,
-      createdDate: "2024-06-18",
-      projectName: "Performance Tuning",
-      client: "Wayne Enterprises",
-      startDate: "2024-06-20",
-      endDate: "2024-08-05",
-      status: "Inactive"
-    },
-    {
-      id: 8,
-      createdDate: "2024-06-20",
-      projectName: "Data Migration",
-      client: "Cyberdyne Systems",
-      startDate: "2024-06-22",
-      endDate: "2024-07-22",
-      status: "Active"
-    },
-    {
-      id: 9,
-      createdDate: "2024-06-22",
-      projectName: "Cloud Deployment",
-      client: "Stark Industries",
-      startDate: "2024-06-24",
-      endDate: "2024-08-01",
-      status: "Active"
-    },
-    {
-      id: 10,
-      createdDate: "2024-06-25",
-      projectName: "DevOps Automation",
-      client: "Pied Piper",
-      startDate: "2024-06-27",
-      endDate: "2024-07-28",
-      status: "Inactive"
+      endDate: "2024-06-10",
+      prostatus: "Pending",
+      priority: "High",
+      assignedBy: "Team Lead",
+      assignedTo: "Developer Z",
+      status:"Active"
     }
    ]);
  
@@ -306,7 +261,7 @@ const Projectlist = () => {
    const [modalOpen1, setModalOpen1] = useState(false);
  
    const handleStatusToggle = (id) => {
-     setprojectData((prevList) =>
+     settasks((prevList) =>
        prevList.map((item) =>
          item.id === id
            ? { ...item, status: item.status === "Active" ? "Inactive" : "Active" }
@@ -321,86 +276,142 @@ const Projectlist = () => {
        accessor: (_row, i) => i + 1,
      },
      { Header: "Created Date", accessor: "createdDate" },
-     { Header: "Project Name", accessor: "projectName" },
-     { Header: "Client", accessor: "client" },
+     { Header: "Task Title", accessor: "taskTitle" },
      { Header: "Start Date", accessor: "startDate" },
      { Header: "End Date", accessor: "endDate" },
+     { Header: "Project Status", accessor: "prostatus" },
+     { Header: "Priority", accessor: "priority" },
+     { Header: "Assigned By", accessor: "assignedBy" },
+     { Header: "Assigned To", accessor: "assignedTo" },
      {
        Header: "Status",
        accessor: "status",
        Cell: ({ row }) => {
          const isActive = row.original.status === "Active";
          return (
-           <div className="form-check form-switch">
-             <input
+        //    <div className="form-check form-switch">
+           <div className="">
+             {/* <input
                type="checkbox"
                className="form-check-input"
                id={`switch-${row.original.id}`}
                checked={isActive}
                onChange={() => handleStatusToggle(row.original.id)}
-             />
-             <label className="form-check-label" htmlFor={`switch-${row.original.id}`}>
+             /> */}
+             {/* <label className="form-check-label" htmlFor={`switch-${row.original.id}`}> */}
                {isActive ? "Active" : "Inactive"}
-             </label>
+             {/* </label> */}
            </div>
          );
        },
      },
      {
-       Header: "Option",
+       Header: "Comment",
        Cell: ({ row }) => (
          <div className="d-flex gap-2">
-           <Link to="/update-project" color="primary" size="sm" className="btn btn-primary">
+           {/* <Link to="/update-task" color="primary" size="sm" className="btn btn-primary">
              Edit
-           </Link>
-           <Button color="danger" size="sm" onClick={() => setModalOpen2(true)}>
-             Delete
+           </Link> */}
+           <Button color="primary" size="sm"  onClick={toggleOffcanvas}>
+             Chat
            </Button>
          </div>
        ),
      },
-   ], [projectData]);
+   ], [tasks]);
  
    const breadcrumbItems = [
      { title: "Dashboard", link: "/" },
-     { title: "Project", link: "#" },
+     { title: "Task View", link: "#" },
    ];
     const [modalOpen2, setModalOpen2] = useState(false);
+ 
    return (
      <Fragment>
        <div className="page-content">
          <Container fluid>
-           <Breadcrumbs title="PROJECT" breadcrumbItems={breadcrumbItems} />
-           <Card>
+           <Breadcrumbs title="TASK VIEW" breadcrumbItems={breadcrumbItems} />
+           
+             <Card>
              <CardBody>
+                <h5 className="mb-4 fs-5 fw-bold">My Tasks</h5>
                <TableContainer
                  columns={columns}
-                 data={projectData}
+                 data={tasks}
                  customPageSize={10}
                  isGlobalFilter={true}
                  setModalOpen={setModalOpen}
                />
              </CardBody>
+             
+           </Card>
+             <Card>
+             <CardBody>
+                <h5 className="mb-4 fs-5 fw-bold">Today’s Tasks</h5>
+               <TableContainer
+                 columns={columns}
+                 data={tasks}
+                 customPageSize={10}
+                 isGlobalFilter={true}
+                 setModalOpen={setModalOpen}
+               />
+             </CardBody>
+             
+           </Card>
+             <Card>
+             <CardBody>
+                <h5 className="mb-4 fs-5 fw-bold">Upcoming Tasks</h5>
+               <TableContainer
+                 columns={columns}
+                 data={tasks}
+                 customPageSize={10}
+                 isGlobalFilter={true}
+                 setModalOpen={setModalOpen}
+               />
+             </CardBody>
+             
+           </Card>
+             <Card>
+             <CardBody>
+                <h5 className="mb-4 fs-5 fw-bold">Overdue Tasks</h5>
+               <TableContainer
+                 columns={columns}
+                 data={tasks}
+                 customPageSize={10}
+                 isGlobalFilter={true}
+                 setModalOpen={setModalOpen}
+               />
+             </CardBody>
+             
            </Card>
          </Container>
           {/*  Modal for Delete Confirmation */}
-              <Modal  isOpen={modalOpen2} toggle={() => setModalOpen1(!modalOpen2)}>
-                {/* <ModalHeader className="position-absolute right-0 top-0 w-100 z-1" toggle={() => setModalOpen2(!modalOpen2)}></ModalHeader> */}
-                <ModalBody className="mt-3">
-                <h4 className="p-3 text-center">Do you really want to <br/> delete the file?</h4>
-                <div className="d-flex justify-content-center">
-                  <img src={deleteimg} alt="Privilege Icon" width={"70%"} className="mb-3 m-auto" />
-                </div>
-                </ModalBody>
-                <ModalFooter>
-                  <Button color="danger" onClick={() => setModalOpen2(false)}>
-                    Delete
-                  </Button>
-                  <Button color="secondary" onClick={() => setModalOpen2(false)}>
-                    Cancel
-                  </Button>
-                </ModalFooter>
-              </Modal>
+          <Modal  isOpen={modalOpen2} toggle={() => setModalOpen1(!modalOpen2)}>
+            {/* <ModalHeader className="position-absolute right-0 top-0 w-100 z-1" toggle={() => setModalOpen2(!modalOpen2)}></ModalHeader> */}
+            <ModalBody className="mt-3">
+            <h4 className="p-3 text-center">Do you really want to <br/> delete the file?</h4>
+            <div className="d-flex justify-content-center">
+              <img src={deleteimg} alt="Privilege Icon" width={"70%"} className="mb-3 m-auto" />
+            </div>
+            </ModalBody>
+            <ModalFooter>
+              <Button color="danger" onClick={() => setModalOpen2(false)}>
+                Delete
+              </Button>
+              <Button color="secondary" onClick={() => setModalOpen2(false)}>
+                Cancel
+              </Button>
+            </ModalFooter>
+          </Modal>
+
+           <Offcanvas direction="end" isOpen={isOpen} toggle={toggleOffcanvas}>
+            <OffcanvasHeader toggle={toggleOffcanvas}>
+             Chat
+            </OffcanvasHeader>
+            <OffcanvasBody>
+              <Chat/>
+            </OffcanvasBody>
+          </Offcanvas>
  
       
        </div>
@@ -408,4 +419,4 @@ const Projectlist = () => {
    );
  };
 
-export default Projectlist
+export default TaskView

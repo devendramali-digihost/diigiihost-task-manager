@@ -110,32 +110,38 @@ class SidebarContent extends Component {
             </li>
             <li>
               <Link to="/role-master" className="waves-effect">
-                <i className="ri-dashboard-line"></i> 
+                <i className="mdi mdi-account-key-outline"></i> 
                 <span className="ms-1">{this.props.t('Role Master')}</span>
               </Link>
             </li>
             <li>
               <Link to="/employee-list" className="waves-effect">
-                <i className="ri-dashboard-line"></i> 
+                <i className=" mdi mdi-account-cash-outline"></i> 
                 <span className="ms-1">{this.props.t('Employee')}</span>
               </Link>
             </li>
             <li>
               <Link to="/client-list" className="waves-effect">
-                <i className="ri-dashboard-line"></i> 
+                <i className="mdi mdi-account-group-outline"></i> 
                 <span className="ms-1">{this.props.t('Client')}</span>
               </Link>
             </li>
             <li>
               <Link to="/project-list" className="waves-effect">
-                <i className="ri-dashboard-line"></i> 
+                <i className="mdi mdi-book-multiple-outline"></i> 
                 <span className="ms-1">{this.props.t('Project')}</span>
               </Link>
             </li>
             <li>
               <Link to="/task-list" className="waves-effect">
-                <i className="ri-dashboard-line"></i> 
+                <i className="mdi mdi-clipboard-file-outline"></i> 
                 <span className="ms-1">{this.props.t('Task')}</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/task-view" className="waves-effect">
+                <i className="ri-dashboard-line"></i> 
+                <span className="ms-1">{this.props.t('Task View')}</span>
               </Link>
             </li>
 

@@ -63,7 +63,7 @@ class Layout extends Component {
     currentage = currentage.replaceAll("-" , " ");
 
     document.title =
-      currentage + " | Nazox - Responsive Bootstrap 5 Admin Dashboard";
+      currentage + " | DiigiiHost Task Manager";
       
     this.props.changeLayout('horizontal');
     if (this.props.topbarTheme) {

@@ -18,7 +18,7 @@ class NonAuthLayout extends Component {
         currentage = currentage.replaceAll("-" , " ");
 
         document.title =
-          currentage + " | Nazox - Responsive Bootstrap 5 Admin Dashboard";
+          currentage + " | DiigiiHost Task Manager";
     }
     render() {
         return <React.Fragment>

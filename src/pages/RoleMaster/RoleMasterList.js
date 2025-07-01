@@ -25,6 +25,7 @@ import {
 import PropTypes from "prop-types";
 import Breadcrumbs from "../../components/Common/Breadcrumb";
 import prvi from "../../assets/images/privileges.png"; 
+import deleteimg from "../../assets/images/delete.png"; 
 
 function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) {
   const count = preGlobalFilteredRows.length;
@@ -220,6 +221,7 @@ const RoleMasterList = () => {
 
   const [modalOpen, setModalOpen] = useState(false);
   const [modalOpen1, setModalOpen1] = useState(false);
+  const [modalOpen2, setModalOpen2] = useState(false);
 
   const handleStatusToggle = (id) => {
     setRolelist((prevList) =>
@@ -283,7 +285,7 @@ const RoleMasterList = () => {
           <Button color="primary" size="sm" onClick={() => setModalOpen1(true)}>
             Edit
           </Button>
-          <Button color="danger" size="sm" onClick={() => alert(`Delete ${row.original.name}`)}>
+          <Button color="danger" size="sm" onClick={() => setModalOpen2(true)}>
             Delete
           </Button>
         </div>
@@ -339,6 +341,25 @@ const RoleMasterList = () => {
               Update
             </Button>
             <Button color="secondary" onClick={() => setModalOpen1(false)}>
+              Cancel
+            </Button>
+          </ModalFooter>
+        </Modal>
+
+        {/*  Modal for Delete Confirmation */}
+        <Modal  isOpen={modalOpen2} toggle={() => setModalOpen1(!modalOpen2)}>
+          {/* <ModalHeader className="position-absolute right-0 top-0 w-100 z-1" toggle={() => setModalOpen2(!modalOpen2)}></ModalHeader> */}
+          <ModalBody className="mt-3">
+           <h4 className="p-3 text-center">Do you really want to <br/> delete the file?</h4>
+           <div className="d-flex justify-content-center">
+            <img src={deleteimg} alt="Privilege Icon" width={"70%"} className="mb-3 m-auto" />
+           </div>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="danger" onClick={() => setModalOpen2(false)}>
+              Delete
+            </Button>
+            <Button color="secondary" onClick={() => setModalOpen2(false)}>
               Cancel
             </Button>
           </ModalFooter>
